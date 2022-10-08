@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'BlogPage',
+    'Accounts',
 ]
 
 MIDDLEWARE = [
@@ -55,7 +56,7 @@ ROOT_URLCONF = 'EntregaFinal.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [f'{BASE_DIR}/EntregaFinal/template'],
+        'DIRS': [f'{BASE_DIR}/EntregaFinal/template',f'{BASE_DIR}/BlogPage/template',f'{BASE_DIR}/Accounts/template'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

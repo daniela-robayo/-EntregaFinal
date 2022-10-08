@@ -1,0 +1,27 @@
+{% extends "headers.html" %}
+
+{% load static %}
+
+    {% block contenido %}
+        <link rel="stylesheet" href="{%static 'css/estiloAboutUs.css'%}"> 
+        <head>
+            <link rel ="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+        </head>
+
+        <body>
+            <div class="wrapper-grid">
+                <div class="container-img">
+                    <div class="banner-img"></div>
+                        <img src="https://www.caritas.org.mx/wp-content/uploads/2019/02/cualidades-persona-humanitaria.jpg" alt="profile picture" class="profile-img">
+                        <h1 class="name">Daniela Robayo</h1>
+                        <p class="description">Self-motivated Industrial Engineer with a major in Production. Exceptional analytical skills, attention to detail and deductive reasoning. Among my areas of expertise are inventory management, procurement, and process and project management. Proactive, willing to learn person and attracted by teamwork. Knowledge in SAP, advanced Excel, MongoDB, Python and C++. As a passionate individual with a keen interest in supply chain and project management, I combine a logical approach with storytelling to develop optimal solution.</p>
+                </div>
+                <div class="container-img">
+                    <div class="banner-img"></div>
+                        <img src="https://as2.ftcdn.net/v2/jpg/00/88/53/89/1000_F_88538986_5Bi4eJ667pocsO3BIlbN4fHKz8yUFSuA.jpg" alt="profile picture" class="profile-img">
+                        <h1 class="name">Dario Benitez</h1>
+                        <p class="description">Self-motivated Industrial Engineer with a major in Production. Exceptional analytical skills, attention to detail and deductive reasoning. Among my areas of expertise are inventory management, procurement, and process and project management. Proactive, willing to learn person and attracted by teamwork. Knowledge in SAP, advanced Excel, MongoDB, Python and C++. As a passionate individual with a keen interest in supply chain and project management, I combine a logical approach with storytelling to develop optimal solution.</p>
+                </div>
+            </div>
+        </body>
+    {% endblock %}
