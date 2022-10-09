@@ -9,4 +9,6 @@ class Blog(models.Model):
     autor = models.CharField(max_length=80)
     fecha = models.DateField(max_length=80)
     imagen = models.ImageField(upload_to='images', null = True, blank = True)
-
+    
+    def __str__(self):
+        return f"Nombre:{self.nombre}\nApellido:{self.password}\nEmail: {self.email}"

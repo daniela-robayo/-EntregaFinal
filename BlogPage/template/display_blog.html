@@ -1,0 +1,26 @@
+{% extends "headers.html" %}
+
+{% load static %}
+
+    {% block contenido %}
+    <title>Blog Form</title>
+    <link rel="stylesheet" href="{%static 'css/estiloPages.css'%}">
+    <center><h1>Detalle</h1></center><br>
+    <head>
+        <body>
+        <div class="wrapper-grid">
+                <div class="container-img">
+                    <div class="banner-img"></div>
+                        <br>
+                        <h1 class="name">Título: {{blog.titulo}}</h1>
+                        <h1 class="email">Subtítulo:{{blog.subtitulo}}</h1>
+                        <h1 class="email">Autor:{{blog.autor}}</h1>
+                        <h1 class="email">Fecha:{{blog.fecha}}</h1>
+                        <h1 class="email">Cuerpo:{{blog.cuerpo}}</h1>
+                    </div>
+                </div>
+        </div>
+        <!--<br><center><a type="button" class="btn btn-outline-success" href="/Accounts/create_estudiantes">Agregar Estudiante</a></center>-->
+    </body>
+
+    {% endblock %}
