@@ -8,18 +8,20 @@
     <center><h1>Detalle</h1></center><br>
     <head>
         <body>
-        <div class="wrapper-grid">
                 <div class="container-img">
                     <div class="banner-img"></div>
                         <br>
-                        <h1 class="name">Título: {{blog.titulo}}</h1>
-                        <h1 class="email">Subtítulo:{{blog.subtitulo}}</h1>
-                        <h1 class="email">Autor:{{blog.autor}}</h1>
-                        <h1 class="email">Fecha:{{blog.fecha}}</h1>
-                        <h1 class="email">Cuerpo:{{blog.cuerpo}}</h1>
+                            {% if blogs%} 
+                                {% for entry in blogs %} 
+                                    <h1 class="name">Título: {{entry.titulo}}</h1>
+                                    <h1 class="email">Subtítulo:{{entry.subtitulo}}</h1>
+                                    <h1 class="email">Autor:{{entry.autor}}</h1>
+                                    <h1 class="email">Fecha:{{entry.fecha}}</h1>
+                                    <h1 class="email">Cuerpo:{{entry.cuerpo}}</h1>
+                                {% endfor %}
+                            {% endif %}
                     </div>
                 </div>
-        </div>
         <!--<br><center><a type="button" class="btn btn-outline-success" href="/Accounts/create_estudiantes">Agregar Estudiante</a></center>-->
     </body>
 
