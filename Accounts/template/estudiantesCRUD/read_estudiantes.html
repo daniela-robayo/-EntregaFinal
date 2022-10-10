@@ -3,7 +3,7 @@
 {% load static %}
 
     {% block contenido %}
-    <title>Blog Form</title>
+    <title>Estudiantes</title>
     <link rel="stylesheet" href="{%static 'css/estiloReadEstudiantes.css'%}">
     <center><h1>Listado de Estudiantes</h1></center><br>
     <head>
@@ -16,8 +16,8 @@
                     <h1 class="name">Nombre: {{estudiante.nombre}}</h1>
                     <h1 class="email">Email:{{estudiante.email}}</h1><br>
                     <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                        <a href="/Accounts/update_estudiantes/{{estudiante.email}}" class="btn btn-outline-primary">Edit</a>
-                        <a href="/Accounts/delete_estudiantes/{{estudiante.email}}" class="btn btn-outline-danger">Delete</a>
+                        <a href="/Accounts/update_estudiantes/{{estudiante.email}}" class="btn btn-outline-primary">Editar</a>
+                        <a href="/Accounts/delete_estudiantes/{{estudiante.email}}" class="btn btn-outline-danger">Eliminar</a>
                       </div>
                     <br><br>
                 </div>
