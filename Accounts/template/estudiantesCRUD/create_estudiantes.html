@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{%static 'css/estiloFormBlog.css'%}">
     <body>
         <div class="hero">
-            <form action="/Accounts/create_estudiantes/" method="POST">{% csrf_token %}
+            <form action="/Accounts/signup/" method="POST">{% csrf_token %}
                 <center><h4>Registro Estudiantil</h4></center><br>  
                 <div class="input-group">
                     <input type="text" name="nombre" id="titulo"required>
