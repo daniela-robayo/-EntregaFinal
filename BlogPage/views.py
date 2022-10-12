@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from BlogPage.forms import *
 from BlogPage.models import *
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def home(request):
@@ -32,12 +33,14 @@ def display_blog(request, blog_titulo):
         blogs = Blog.objects.all()
         return render (request,"pages.html",{"blogs":blogs})
 
+@login_required
 def delete_blog(request,blog_titulo):
     blog = Blog.objects.get(titulo = blog_titulo)
     blog.delete()
     blogs = Blog.objects.all()
     return render (request,"pages.html",{"blogs":blogs})
 
+@login_required
 def update_blog(request, blog_titulo):
     blog = Blog.objects.get(titulo = blog_titulo)
     if request.method == 'POST':

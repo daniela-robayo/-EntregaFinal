@@ -1,0 +1,21 @@
+{% extends "headers.html" %}
+
+{% load static %}
+
+    {% block contenido %}
+    <title>Blog Form</title>
+    <link rel="stylesheet" href="{%static 'css/estiloEdit.css'%}">
+    <body>
+        <div class="hero">
+            <form action="" method="POST">{% csrf_token %}
+                <center><h4>Registro Usuario</h4></center><br>  
+                <table>
+                    {{form.as_p}}
+                </table>
+                <button type="Submit"> Registrar</button>
+            </form>
+        </div>
+
+    </body>
+
+    {% endblock %}

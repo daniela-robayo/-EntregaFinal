@@ -1,0 +1,21 @@
+{% extends "headers.html" %}
+
+{% load static %}
+
+    {% block contenido %}
+    <title>Log In</title>
+    <link rel="stylesheet" href="{%static 'css/estiloEdit.css'%}">
+    <body>
+        <div class="hero">
+            <form action="/Accounts/login/" method="POST">{% csrf_token %}
+                <center><h4>Inicio Sesión</h4></center><br>  
+                <table>
+                    {{form.as_p}}
+                </table>
+                <button type="Submit"> Entrar</button>
+            </form>
+        </div>
+
+    </body>
+
+    {% endblock %}

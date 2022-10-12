@@ -7,4 +7,4 @@ class Estudiante(models.Model):
     email = models.EmailField()
 
     def __str__(self):
-        return f"Nombre:{self.nombre}\nApellido:{self.password}\nEmail: {self.email}"
+        return f"Nombre:{self.nombre}\nContraseña:{self.password}\nEmail: {self.email}"
