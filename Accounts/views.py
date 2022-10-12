@@ -9,7 +9,7 @@ from django.contrib.auth.decorators import login_required
 
 def create_estudiantes(request):
     if request.method == "POST":
-        estudiante = Estudiante(nombre = request.POST['nombre'],password = request.POST['password'],email=request.POST['email'])
+        estudiante = Estudiante(nombre = request.POST['nombre'],curso = request.POST['curso'],email=request.POST['email'])
         estudiante.save()
         estudiantes = Estudiante.objects.all()
         return render (request,"estudiantesCRUD/read_estudiantes.html",{"estudiantes":estudiantes})
@@ -27,13 +27,13 @@ def update_estudiantes(request, estudiante_email):
         if formulario.is_valid():
             informacion = formulario.cleaned_data
             estudiante.nombre = informacion['nombre']
-            estudiante.password = informacion['password']
+            estudiante.curso = informacion['curso']
             estudiante.email = informacion['email']
             estudiante.save()
             estudiantes = Estudiante.objects.all()
             return render (request,"estudiantesCRUD/read_estudiantes.html",{"estudiantes":estudiantes})
     else:
-        formulario = form_estudiantes(initial = {'nombre': estudiante.nombre,'password': estudiante.password,'email': estudiante.email})
+        formulario = form_estudiantes(initial = {'nombre': estudiante.nombre,'curso': estudiante.curso,'email': estudiante.email})
     return render(request,"estudiantesCRUD/update_estudiantes.html",{'formulario':formulario})
 
 @login_required
@@ -55,11 +55,11 @@ def login_request(request):
                 login(request, user)
                 return render(request,"home.html")
             else:
-                return render(request, "estudiantesCRUD/login.html", {'form':form})
+                return render(request, "login.html", {'form':form})
         else:
-            return render(request, "estudiantesCRUD/login.html", {'form':form})
+            return render(request, "login.html", {'form':form})
     form = AuthenticationForm()
-    return render(request,"estudiantesCRUD/login.html",{'form':form})
+    return render(request,"login.html",{'form':form})
 
 def signup(request):
     if request.method == "POST":
@@ -69,6 +69,6 @@ def signup(request):
             form.save()
             return redirect("/Accounts/login")
         else: 
-            return render(request, "estudiantesCRUD/registro.html", {'form': form})
+            return render(request, "registro.html", {'form': form})
     form = UserRegisterForm()
-    return render(request, "estudiantesCRUD/registro.html", {'form': form})
+    return render(request, "registro.html", {'form': form})

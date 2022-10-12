@@ -11,5 +11,6 @@ urlpatterns = [
     path('update_estudiantes/<estudiante_email>',update_estudiantes),
     path('delete_estudiantes/<estudiante_email>',delete_estudiantes),
     path('login/',login_request),
-    path('logout/', LogoutView.as_view(template_name = 'estudiantesCRUD/logout.html'), name="Logout" ),
+    path('logout/', LogoutView.as_view(template_name = 'logout.html'), name="Logout" ),
+    path('create_estudiantes/',create_estudiantes),
 ]

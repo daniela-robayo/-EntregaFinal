@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 class form_estudiantes(forms.Form):
     nombre = forms.CharField(max_length=50)
-    password = forms.CharField(max_length=50)
+    curso = forms.CharField(max_length=50)
     email = forms.EmailField()
 
 class UserRegisterForm(UserCreationForm):
@@ -15,4 +15,4 @@ class UserRegisterForm(UserCreationForm):
     class Meta:
         model = User
         fields =['username','email','password1','password2']
-        help_text = {k: "" for k in fields }
+        help_texts = {k: "" for k in fields }

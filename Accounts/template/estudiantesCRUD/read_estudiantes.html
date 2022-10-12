@@ -14,7 +14,8 @@
                     <div class="banner-img"></div>
                     <br>
                     <h1 class="name">Nombre: {{estudiante.nombre}}</h1>
-                    <h1 class="email">Email:{{estudiante.email}}</h1><br>
+                    <h1 class="email">Email: {{estudiante.email}}</h1>
+                    <h1 class="email">Curso: {{estudiante.curso}}</h1><br>
                     <div class="btn-group" role="group" aria-label="Basic mixed styles example">
                         <a href="/Accounts/update_estudiantes/{{estudiante.email}}" class="btn btn-outline-primary">Editar</a>
                         <a href="/Accounts/delete_estudiantes/{{estudiante.email}}" class="btn btn-outline-danger">Eliminar</a>
@@ -23,7 +24,7 @@
                 </div>
             {% endfor %}
         </div>
-        <br><center><a type="button" class="btn btn-outline-success" href="/Accounts/signup/">Agregar Estudiante</a></center>
+        <br><center><a type="button" class="btn btn-outline-success" href="/Accounts/create_estudiantes/">Agregar Estudiante</a></center>
     </body>
 
     {% endblock %}
