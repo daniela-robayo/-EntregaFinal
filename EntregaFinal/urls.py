@@ -18,6 +18,8 @@ from django.urls import path, include
 from EntregaFinal.view import home
 from BlogPage.views import *
 from Accounts.views import *
+from django.conf import Settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,3 +27,5 @@ urlpatterns = [
     path('BlogPage/', include("BlogPage.urls")),
     path('Accounts/', include("Accounts.urls")),
 ]
+
+urlpatterns += static(Settings.MEDIA_URL, document_root = Settings.MEDIA_ROOT)
