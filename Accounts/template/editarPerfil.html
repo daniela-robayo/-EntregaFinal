@@ -1,0 +1,21 @@
+{% extends "headers.html" %}
+
+{% load static %}
+
+    {% block contenido %}
+    <title>Actualizar</title>
+    <link rel="stylesheet" href="{%static 'css/estiloEdit.css'%}">
+    <body>
+        <div class="hero">
+            <form method = "POST"> {% csrf_token %}
+                <center><h4>Actualización {{usuario}}</h4></center><br>  
+                <table>
+                    {{form.as_p}}
+                </table>
+                <button type="Submit" class="btn btn-outline-success">Actualizar</button><br><br>
+                <center><a href="/Accounts/changepass/">Cambiar contraseña</a></center>
+            </form>
+        </div>  
+    </body>
+
+    {% endblock %}

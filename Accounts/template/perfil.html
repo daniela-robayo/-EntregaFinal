@@ -1,0 +1,27 @@
+{% extends "headers.html" %}
+
+{% load static %}
+
+    {% block contenido %}
+    <title>Profile</title>
+    <link rel="stylesheet" href="{%static 'css/estiloReadEstudiantes.css'%}">
+    <center><h1>{{user.username}}</h1></center><br>
+    <head>
+        <head>
+            <body>
+                <div class="container-img">
+                    <div class="banner-img"></div>
+                        <br>
+                            <h1 class="name">Username: {{user.username}}</h1>
+                            <h1 class="email">Email: {{user.email}}</h1>
+                            <h1 class="email">Nombre: {{user.first_name}}</h1>
+                            <h1 class="email">Apellido: {{user.last_name}}</h1>
+                        <br>    
+                        <a type="button" href="/Accounts/editarPerfil/" class="btn btn-outline-warning">Editar Perfil</a>
+                        <br><br>
+                    </div>
+                </div>
+            <!--<br><center><a type="button" class="btn btn-outline-success" href="/Accounts/create_estudiantes">Agregar Estudiante</a></center>-->
+        </body>
+
+    {% endblock %}

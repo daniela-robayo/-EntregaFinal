@@ -1,0 +1,20 @@
+{% extends "headers.html" %}
+
+{% load static %}
+
+    {% block contenido %}
+    <title>Cambiar contraseña</title>
+    <link rel="stylesheet" href="{%static 'css/estiloEdit.css'%}">
+    <body>
+        <div class="hero">
+            <form method = "POST"> {% csrf_token %}
+                <center><h4>Cambio contraseña <br>{{usuario}}</h4></center><br>  
+                <table>
+                    {{form.as_p}}
+                </table>
+                <button type="Submit" class="btn btn-outline-success">Aceptar</button><br><br>
+            </form>
+        </div>  
+    </body>
+
+    {% endblock %}

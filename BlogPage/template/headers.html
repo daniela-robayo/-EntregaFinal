@@ -116,10 +116,16 @@
         <!--<li class="nav-item"><a href="https://getbootstrap.com/docs/5.2/examples/headers/#" class="nav-link link-dark px-2">About</a></li>-->
       </ul>
       <ul class="nav">
-        <li class="nav-item"><a href="/Accounts/signup" class="nav-link link-dark px-2">Sign up</a></li>
-        <li class="nav-item"><a href="/Accounts/login" class="nav-link link-dark px-2">Log In</a></li>
-        <li class="nav-item"><a href="/Accounts/logout/" class="nav-link link-dark px-2">Log Out</a></li>
-      </ul>
+        <ul class="nav">
+          {% if user.is_authenticated %}
+            <li class="nav-item"><a href="/Accounts/perfil/" class="nav-link link-dark px-2">{{user.username}}</a></li>
+            <li class="nav-item"><a href="/Accounts/logout/" class="nav-link link-dark px-2">Log Out</a></li>
+          {% else %}
+            <li class="nav-item"><a href="/Accounts/signup/" class="nav-link link-dark px-2">Sign up</a></li>
+            <li class="nav-item"><a href="/Accounts/login/" class="nav-link link-dark px-2">Log In</a></li>
+          {% endif %}
+        </ul>  
+    </ul>
     </div>
   </nav>
   <header class="py-3 mb-4 border-bottom">
