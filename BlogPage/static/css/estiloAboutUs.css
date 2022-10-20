@@ -1,6 +1,6 @@
 :root{
     --clr-primary:#651fff;
-    --clr-gray:#37474f;
+    --clr-gray:#444e53;
     --clr-gray-ligth:#b0bec5;
 }
 
@@ -30,6 +30,7 @@ body{
     text-align: center;
     border-radius: 1rem;
     position: relative;
+    width:60%;
 }
 
 .banner-img{
@@ -44,7 +45,7 @@ body{
 }
 
 .profile-img{
-    width: 12rem;
+    width: 7rem;
     clip-path: circle(60px at center);
     margin-top: 4.5rem;
 }
@@ -55,12 +56,15 @@ body{
 }
 
 .decription{
-    margin:1rem 2rem;
+    margin-inline-start: 10rem 10rem 10rem 10rems;
     font-size:0.9rem;
+    width: 45%;
+    justify-content: center;
+    position: absolute;
 }
 
-@media screen and (min-width: 500px) {
+/*@media screen and (min-width: 500px) {
   .wrapper-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-}
+}*/

@@ -13,7 +13,8 @@ def AboutUs(request):
 
 def formBlog(request):
     if request.method=="POST":
-        blog = Blog(titulo = request.POST['titulo'],subtitulo = request.POST['subtitulo'],autor = request.POST['autor'],fecha = request.POST['fecha'],cuerpo = request.POST['cuerpo'])
+        #blog = Blog(titulo = request.POST['titulo'],subtitulo = request.POST['subtitulo'],autor = request.POST['autor'],fecha = request.POST['fecha'],cuerpo = request.POST['cuerpo'])
+        blog = Blog(titulo = request.POST['titulo'],subtitulo = request.POST['subtitulo'],autor = request.POST['autor'],cuerpo = request.POST['cuerpo'])
         blog.save()
         blogs = Blog.objects.all()
         return render (request,"pages.html",{"blogs":blogs})
@@ -22,7 +23,6 @@ def formBlog(request):
 def pages(request):
     blogs = Blog.objects.all()
     return render (request,"pages.html",{"blogs":blogs})
-
 
 def display_blog(request, blog_titulo):
     blog = Blog.objects.get(titulo = blog_titulo)
@@ -50,12 +50,13 @@ def update_blog(request, blog_titulo):
             blog.titulo = informacion['titulo']
             blog.subtitulo = informacion['subtitulo']
             blog.autor = informacion['autor']
-            blog.fecha = informacion['fecha']
+            #blog.fecha = informacion['fecha']
             blog.cuerpo = informacion['cuerpo']
             blog.save()
             blogs = Blog.objects.all()
             return render (request,"pages.html",{"blogs":blogs})
     else:
-        formulario = form_blogs(initial = {'titulo': blog.titulo,'subtitulo': blog.subtitulo,'autor': blog.autor,'fecha': blog.fecha,'cuerpo': blog.cuerpo})
+        #formulario = form_blogs(initial = {'titulo': blog.titulo,'subtitulo': blog.subtitulo,'autor': blog.autor,'fecha': blog.fecha,'cuerpo': blog.cuerpo})
+        formulario = form_blogs(initial = {'titulo': blog.titulo,'subtitulo': blog.subtitulo,'autor': blog.autor,'cuerpo': blog.cuerpo})
+    
     return render(request,"update_blog.html",{'formulario':formulario})
-

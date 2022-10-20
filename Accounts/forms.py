@@ -1,3 +1,4 @@
+from formatter import NullFormatter
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm, PasswordChangeForm
 from django.contrib.auth.models import User
@@ -21,14 +22,14 @@ class UserRegisterForm(UserCreationForm):
 
 class UserEditForm(UserChangeForm):
     username = forms.CharField(widget = forms.TextInput(attrs={'placeholder':'Username'}))
-    email = forms.EmailField(widget = forms.TextInput(attrs={'placeholder':'Username'}))
+    email = forms.EmailField(widget = forms.TextInput(attrs={'placeholder':'Email'}))
     first_name = forms.CharField(widget = forms.TextInput(attrs={'placeholder':'First Name'}))
     last_name = forms.CharField(widget = forms.TextInput(attrs={'placeholder':'Last Name'}))
-    password = forms.CharField(widget = forms.PasswordInput(attrs={'placeholder':'Password'}))
+    password = None#forms.CharField(widget = forms.PasswordInput(attrs={'placeholder':'Password'}))
     
     class Meta:
         model = User
-        fields =['username','email','first_name','last_name','password']
+        fields =['username','email','first_name','last_name']
         help_texts = {k: "" for k in fields }
 
 class ChangePasswordForm(PasswordChangeForm):
